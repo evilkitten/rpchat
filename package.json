@@ -1,0 +1,7 @@
+{
+  "name": "rpchat",
+  "description": "RP chat test app",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {}
+}
