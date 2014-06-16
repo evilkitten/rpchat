@@ -3,5 +3,7 @@
   "description": "RP chat test app",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "express": "4.4.x"
+  }
 }
