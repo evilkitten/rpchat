@@ -1,7 +1,7 @@
 var express = require('express');
 var engines = require('consolidate');
 
-var app = express();
+var app = express();app.use(express.static(__dirname + '/public'));
 
 // Setup template engine
 app.engine('html', engines.hogan);
