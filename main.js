@@ -9,7 +9,7 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 app.get("/", function(req, res) {
-  res.render('index');
+  res.locals.message = "Hello, this is a local variable message";res.render('index');
 });
 
 var server = app.listen(8000, function() {
