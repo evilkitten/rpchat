@@ -1,7 +1,8 @@
 var express = require('express');
 var engines = require('consolidate');
 
-var app = express();app.use(express.static(__dirname + '/public'));
+var app = express();
+app.use(express.static(__dirname + '/public'));
 
 // Setup template engine
 app.engine('html', engines.hogan);
@@ -9,7 +10,8 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 
 app.get("/", function(req, res) {
-  res.locals.message = "Hello, this is a local variable message";res.render('index');
+  res.locals.message = "Hello, this is a local variable message";
+  res.render('index');
 });
 
 var server = app.listen(8000, function() {
