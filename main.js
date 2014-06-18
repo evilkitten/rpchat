@@ -1,5 +1,6 @@
 var express = require('express');
 var engines = require('consolidate');
+var io = require('socket.io');
 
 var app = express();
 app.use(express.static(__dirname + '/public'));
@@ -15,5 +16,7 @@ app.get("/", function(req, res) {
 });
 
 var server = app.listen(8000, function() {
+    io.listen(server);
     console.log('Listening on port %d', server.address().port);
 });
+
