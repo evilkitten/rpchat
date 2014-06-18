@@ -1,8 +1,12 @@
-var express = require('express');
-var engines = require('consolidate');
-var io = require('socket.io');
+var http     = require('http');
+var express  = require('express');
+var engines  = require('consolidate');
+var socketIO = require('socket.io');
 
-var app = express();
+var app    = express();
+var server = http.Server(app);
+var io     = socketIO(server);
+
 app.use(express.static(__dirname + '/public'));
 
 // Setup template engine
@@ -15,8 +19,6 @@ app.get("/", function(req, res) {
   res.render('index');
 });
 
-var server = app.listen(8000, function() {
-    io.listen(server);
-    console.log('Listening on port %d', server.address().port);
+server.listen(8000, function() {
+  console.log('Listening on port %d', server.address().port);
 });
-
