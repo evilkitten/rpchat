@@ -19,6 +19,10 @@ app.get("/", function(req, res) {
   res.render('index');
 });
 
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
 server.listen(8000, function() {
   console.log('Listening on port %d', server.address().port);
 });

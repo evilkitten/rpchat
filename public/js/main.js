@@ -6,5 +6,6 @@ function sendMessage(event) {
   message.value='';//Clear the entry box ready for next message
 }
 
+var socket = io();
 var chatForm = document.getElementById('chat-form');
 chatForm.addEventListener('submit', sendMessage);
