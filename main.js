@@ -20,7 +20,7 @@ app.get("/", function(req, res) {
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
+  socket.on('message', function(msg) { io.emit('message', msg); })
 });
 
 server.listen(8000, function() {
